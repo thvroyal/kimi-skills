@@ -1,0 +1,6 @@
+{
+  "type": "commonjs",
+  "dependencies": {
+    "playwright": "^1.58.1"
+  }
+}

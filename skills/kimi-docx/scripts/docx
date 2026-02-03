@@ -397,7 +397,7 @@ case "${1:-help}" in
         ;;
     -h|--help|help)
         cat <<'EOF'
-Usage: cd /app/.kimi/skills/docx/ && ./scripts/docx <command> [args]
+Usage: cd /app/.kimi/skills/kimi-docx/ && ./scripts/docx <command> [args]
 
 Commands:
   env           Show environment status (no changes)
@@ -406,7 +406,7 @@ Commands:
   validate FILE Validate existing docx
 
 Fixed Paths:
-  SKILL dir:  /app/.kimi/skills/docx/     (execute commands here)
+  SKILL dir:  /app/.kimi/skills/kimi-docx/     (execute commands here)
   Workspace:  /tmp/docx-work/             (edit Program.cs here)
   Output:     /mnt/okcomputer/output/     (final deliverables)
   Upload:     /mnt/okcomputer/upload/     (user uploaded files)

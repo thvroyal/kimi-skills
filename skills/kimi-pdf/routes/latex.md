@@ -23,7 +23,7 @@ cd ~ && curl -fsSL https://drop-sh.fullyjustified.net | sh && ls -la tectonic
 
 **Compilation Command**:
 
-**Must** use `/app/.kimi/skills/pdf/scripts/compile_latex.py` script to compile. The script will automatically:
+**Must** use `/app/.kimi/skills/kimi-pdf/scripts/compile_latex.py` script to compile. The script will automatically:
 - Filter redundant package download logs
 - Filter compilation progress info
 - Preserve all errors and warnings
@@ -33,13 +33,13 @@ cd ~ && curl -fsSL https://drop-sh.fullyjustified.net | sh && ls -la tectonic
 
 ```bash
 # Single compilation
-python3 /app/.kimi/skills/pdf/scripts/compile_latex.py main.tex
+python3 /app/.kimi/skills/kimi-pdf/scripts/compile_latex.py main.tex
 
 # Multiple runs (for cross-references and bibliography)
-python3 /app/.kimi/skills/pdf/scripts/compile_latex.py main.tex --runs 2
+python3 /app/.kimi/skills/kimi-pdf/scripts/compile_latex.py main.tex --runs 2
 
 # Keep full logs (for debugging)
-python3 /app/.kimi/skills/pdf/scripts/compile_latex.py main.tex --keep-logs
+python3 /app/.kimi/skills/kimi-pdf/scripts/compile_latex.py main.tex --keep-logs
 ```
 
 ### Step 2: Pre-Writing Analysis
@@ -280,10 +280,10 @@ PDF bookmarks are auto-generated from `\section`, `\chapter`, etc.
 **Cross-references require 2+ compilation runs**:
 ```bash
 # References show "??" after first run - this is normal
-python3 /app/.kimi/skills/pdf/scripts/compile_latex.py main.tex --runs 2
+python3 /app/.kimi/skills/kimi-pdf/scripts/compile_latex.py main.tex --runs 2
 
 # With bibliography: need 3 runs
-python3 /app/.kimi/skills/pdf/scripts/compile_latex.py main.tex --runs 3
+python3 /app/.kimi/skills/kimi-pdf/scripts/compile_latex.py main.tex --runs 3
 ```
 
 **If references still show "??"**: Check label names match exactly.

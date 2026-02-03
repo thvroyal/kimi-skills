@@ -74,7 +74,7 @@ docx/
 First time, execute in the SKILL directory:
 
 ```bash
-cd /app/.kimi/skills/docx/
+cd /app/.kimi/skills/kimi-docx/
 ./scripts/docx init
 ```
 
@@ -82,7 +82,7 @@ cd /app/.kimi/skills/docx/
 
 | Path | Purpose |
 |------|---------|
-| `/app/.kimi/skills/docx/` | SKILL directory, where commands are executed |
+| `/app/.kimi/skills/kimi-docx/` | SKILL directory, where commands are executed |
 | `/tmp/docx-work/` | Working directory, edit `Program.cs` here |
 | `/mnt/okcomputer/output/` | Output directory, final deliverables |
 | `/mnt/okcomputer/upload/` | User upload location (input files) |
@@ -131,7 +131,7 @@ string outputFile = "my_document.docx";  // Script can't find file!
 ### Standalone Validation
 
 ```bash
-cd /app/.kimi/skills/docx/
+cd /app/.kimi/skills/kimi-docx/
 ./scripts/docx validate /mnt/okcomputer/output/report.docx
 ```
 

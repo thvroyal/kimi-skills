@@ -8,7 +8,7 @@ Create professional PDFs using HTML + Playwright + Paged.js.
 **Run immediately before writing HTML**—package download takes time.
 
 ```bash
-/app/.kimi/skills/pdf/scripts/setup.sh
+/app/.kimi/skills/kimi-pdf/scripts/setup.sh
 ```
 
 The script only checks status, does not auto-install. If missing, install manually:
@@ -27,8 +27,8 @@ Run in background while writing HTML.
 
 ## Step 2: Convert to PDF
 ```bash
-node /app/.kimi/skills/pdf/scripts/html_to_pdf.js document.html
-node /app/.kimi/skills/pdf/scripts/html_to_pdf.js document.html --output output.pdf
+node /app/.kimi/skills/kimi-pdf/scripts/html_to_pdf.js document.html
+node /app/.kimi/skills/kimi-pdf/scripts/html_to_pdf.js document.html --output output.pdf
 ```
 After conversion, the script outputs:
 - Page count, word statistics, figures/tables count

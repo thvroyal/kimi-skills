@@ -8,7 +8,7 @@ Process existing PDFs using Python CLI tools (pikepdf + pdfplumber).
 **Run immediately before using pdf.py commands**—package installation takes time.
 
 ```bash
-/app/.kimi/skills/pdf/scripts/setup.sh
+/app/.kimi/skills/kimi-pdf/scripts/setup.sh
 ```
 
 The script only checks status, does not auto-install. If missing, install manually:
@@ -20,7 +20,7 @@ The script only checks status, does not auto-install. If missing, install manual
 ## Command Reference
 
 ```
-python3 /app/.kimi/skills/pdf/scripts/pdf.py <command> <subcommand> [options]
+python3 /app/.kimi/skills/kimi-pdf/scripts/pdf.py <command> <subcommand> [options]
 ```
 
 | Command | Description |
@@ -65,7 +65,7 @@ All commands output JSON:
 
 **Step 1: Check form fields**
 ```bash
-python3 /app/.kimi/skills/pdf/scripts/pdf.py form info input.pdf
+python3 /app/.kimi/skills/kimi-pdf/scripts/pdf.py form info input.pdf
 ```
 
 Output example:
@@ -86,7 +86,7 @@ Output example:
 
 **Step 2: Fill form**
 ```bash
-python3 /app/.kimi/skills/pdf/scripts/pdf.py form fill input.pdf -o output.pdf -d '{"name": "John", "agree": "true", "country": "US"}'
+python3 /app/.kimi/skills/kimi-pdf/scripts/pdf.py form fill input.pdf -o output.pdf -d '{"name": "John", "agree": "true", "country": "US"}'
 ```
 
 ### Field Value Rules
@@ -106,14 +106,14 @@ python3 /app/.kimi/skills/pdf/scripts/pdf.py form fill input.pdf -o output.pdf -
 
 **Extract text**:
 ```bash
-python3 /app/.kimi/skills/pdf/scripts/pdf.py extract text document.pdf
-python3 /app/.kimi/skills/pdf/scripts/pdf.py extract text document.pdf -p 1-3    # Pages 1-3 only
-python3 /app/.kimi/skills/pdf/scripts/pdf.py extract text document.pdf -p 1,3,5  # Specific pages
+python3 /app/.kimi/skills/kimi-pdf/scripts/pdf.py extract text document.pdf
+python3 /app/.kimi/skills/kimi-pdf/scripts/pdf.py extract text document.pdf -p 1-3    # Pages 1-3 only
+python3 /app/.kimi/skills/kimi-pdf/scripts/pdf.py extract text document.pdf -p 1,3,5  # Specific pages
 ```
 
 **Extract tables**:
 ```bash
-python3 /app/.kimi/skills/pdf/scripts/pdf.py extract table document.pdf
+python3 /app/.kimi/skills/kimi-pdf/scripts/pdf.py extract table document.pdf
 ```
 
 Output includes structured table data:
@@ -140,23 +140,23 @@ Output includes structured table data:
 
 **Merge PDFs**:
 ```bash
-python3 /app/.kimi/skills/pdf/scripts/pdf.py pages merge a.pdf b.pdf c.pdf -o merged.pdf
+python3 /app/.kimi/skills/kimi-pdf/scripts/pdf.py pages merge a.pdf b.pdf c.pdf -o merged.pdf
 ```
 
 **Split PDF**:
 ```bash
-python3 /app/.kimi/skills/pdf/scripts/pdf.py pages split document.pdf -o ./output_dir/
+python3 /app/.kimi/skills/kimi-pdf/scripts/pdf.py pages split document.pdf -o ./output_dir/
 ```
 
 **Rotate pages**:
 ```bash
-python3 /app/.kimi/skills/pdf/scripts/pdf.py pages rotate document.pdf 90 -o rotated.pdf
-python3 /app/.kimi/skills/pdf/scripts/pdf.py pages rotate document.pdf 180 -o rotated.pdf -p 1-3  # Specific pages
+python3 /app/.kimi/skills/kimi-pdf/scripts/pdf.py pages rotate document.pdf 90 -o rotated.pdf
+python3 /app/.kimi/skills/kimi-pdf/scripts/pdf.py pages rotate document.pdf 180 -o rotated.pdf -p 1-3  # Specific pages
 ```
 
 **Crop pages**:
 ```bash
-python3 /app/.kimi/skills/pdf/scripts/pdf.py pages crop document.pdf 50,50,550,750 -o cropped.pdf
+python3 /app/.kimi/skills/kimi-pdf/scripts/pdf.py pages crop document.pdf 50,50,550,750 -o cropped.pdf
 ```
 Box format: `left,bottom,right,top` in points (1 inch = 72 points).
 
@@ -166,12 +166,12 @@ Box format: `left,bottom,right,top` in points (1 inch = 72 points).
 
 **Read metadata**:
 ```bash
-python3 /app/.kimi/skills/pdf/scripts/pdf.py meta get document.pdf
+python3 /app/.kimi/skills/kimi-pdf/scripts/pdf.py meta get document.pdf
 ```
 
 **Set metadata**:
 ```bash
-python3 /app/.kimi/skills/pdf/scripts/pdf.py meta set document.pdf -o output.pdf -d '{"Title": "My Document", "Author": "John Doe"}'
+python3 /app/.kimi/skills/kimi-pdf/scripts/pdf.py meta set document.pdf -o output.pdf -d '{"Title": "My Document", "Author": "John Doe"}'
 ```
 
 Supported fields: `Title`, `Author`, `Subject`, `Keywords`, `Creator`, `Producer`
@@ -186,7 +186,7 @@ Supported fields: `Title`, `Author`, `Subject`, `Keywords`, `Creator`, `Producer
 **Requires**: LibreOffice installed
 
 ```bash
-python3 /app/.kimi/skills/pdf/scripts/pdf.py convert input.docx -o output.pdf
+python3 /app/.kimi/skills/kimi-pdf/scripts/pdf.py convert input.docx -o output.pdf
 ```
 
 Or use LibreOffice directly for batch conversion:

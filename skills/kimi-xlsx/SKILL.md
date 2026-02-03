@@ -84,9 +84,9 @@ You have **two types of tools** for Excel tasks:
 
 The KimiXlsx tool has **6 commands** that can be called using the shell tool:
 
-**Executable Path**: `/app/.kimi/skills/xlsx/scripts/KimiXlsx`
+**Executable Path**: `/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx`
 
-**Base Command**: `/app/.kimi/skills/xlsx/scripts/KimiXlsx <command> [arguments]`
+**Base Command**: `/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx <command> [arguments]`
 
 ---
 
@@ -107,7 +107,7 @@ The KimiXlsx tool has **6 commands** that can be called using the shell tool:
 
 - how to use:
 ```bash
-/app/.kimi/skills/xlsx/scripts/KimiXlsx recheck output.xlsx
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx recheck output.xlsx
 ```
 
 2. **reference-check** (alias: refcheck)
@@ -119,7 +119,7 @@ The KimiXlsx tool has **6 commands** that can be called using the shell tool:
 **Inconsistent formula patterns** - Some formulas in the same column deviate from the predominant pattern ("isolated" formulas).
 - how to use:
 ```bash
-/app/.kimi/skills/xlsx/scripts/KimiXlsx reference-check output.xlsx
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx reference-check output.xlsx
 ```
 
 3. **inspect**
@@ -128,7 +128,7 @@ The KimiXlsx tool has **6 commands** that can be called using the shell tool:
 - how to use:
 ```bash
 # Analyze and output JSON
-/app/.kimi/skills/xlsx/scripts/KimiXlsx inspect input.xlsx --pretty
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx inspect input.xlsx --pretty
 ```
 
 ---
@@ -136,7 +136,7 @@ The KimiXlsx tool has **6 commands** that can be called using the shell tool:
 4. **pivot** 🚨 REQUIRES pivot-table.md
 
 - description: **Create PivotTable with optional chart** using pure OpenXML SDK. This is the ONLY supported method for PivotTable creation. Automatically creates a chart (bar/line/pie) alongside the PivotTable.
-- **⚠️ CRITICAL**: Before using this command, you MUST read `/app/.kimi/skills/xlsx/pivot-table.md` for full documentation.
+- **⚠️ CRITICAL**: Before using this command, you MUST read `/app/.kimi/skills/kimi-xlsx/pivot-table.md` for full documentation.
 - required parameters:
   - `input.xlsx` - Input Excel file (positional)
   - `output.xlsx` - Output Excel file (positional)
@@ -153,10 +153,10 @@ The KimiXlsx tool has **6 commands** that can be called using the shell tool:
 - how to use:
 ```bash
 # First: inspect to get sheet names and headers
-/app/.kimi/skills/xlsx/scripts/KimiXlsx inspect data.xlsx --pretty
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx inspect data.xlsx --pretty
 
 # Then: create PivotTable with chart
-/app/.kimi/skills/xlsx/scripts/KimiXlsx pivot \
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx pivot \
     data.xlsx output.xlsx \
     --source "Sales!A1:F100" \
     --rows "Product,Region" \
@@ -172,7 +172,7 @@ The KimiXlsx tool has **6 commands** that can be called using the shell tool:
 - description: **Verify that all charts have actual data content**. Use this after creating charts to ensure they are not empty.
 - how to use:
 ```bash
-/app/.kimi/skills/xlsx/scripts/KimiXlsx chart-verify output.xlsx
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx chart-verify output.xlsx
 ```
 - exit codes:
   - `0` = All charts have data, safe to deliver
@@ -196,7 +196,7 @@ The KimiXlsx tool has **6 commands** that can be called using the shell tool:
 
 - how to use:
 ```bash
-/app/.kimi/skills/xlsx/scripts/KimiXlsx validate output.xlsx
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx validate output.xlsx
 ```
 
 - **If validation fails**: Do NOT attempt to "fix" the file. Regenerate it from scratch with corrected code.
@@ -247,14 +247,14 @@ After ALL sheets pass:
 ### Per-Sheet Check Commands
 ```bash
 # After creating/modifying EACH sheet, save and run:
-/app/.kimi/skills/xlsx/scripts/KimiXlsx recheck output.xlsx
-/app/.kimi/skills/xlsx/scripts/KimiXlsx reference-check output.xlsx
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx recheck output.xlsx
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx reference-check output.xlsx
 # Fix ALL errors before creating the next sheet!
 ```
 
 ### Final Validation (after all sheets complete)
 ```bash
-/app/.kimi/skills/xlsx/scripts/KimiXlsx validate output.xlsx
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx validate output.xlsx
 ```
 
 **Why Per-Sheet Validation?**
@@ -364,7 +364,7 @@ ws['D2'] = '=IFERROR(VLOOKUP(A2,$G$2:$I$50,3,FALSE),"N/A")'
 
 **⚠️ MANDATORY ACTION**:
 When PivotTable need is detected, you MUST:
-1. **READ** `/app/.kimi/skills/xlsx/pivot-table.md` FIRST
+1. **READ** `/app/.kimi/skills/kimi-xlsx/pivot-table.md` FIRST
 2. Follow the execution order and workflow in that document
 3. Use the `pivot` command (NOT manual code construction)
 
@@ -377,10 +377,10 @@ When PivotTable need is detected, you MUST:
 **Quick Reference** (Details in pivot-table.md):
 ```bash
 # Step 1: Inspect data structure
-/app/.kimi/skills/xlsx/scripts/KimiXlsx inspect data.xlsx --pretty
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx inspect data.xlsx --pretty
 
 # Step 2: Create PivotTable with chart
-/app/.kimi/skills/xlsx/scripts/KimiXlsx pivot \
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx pivot \
     data.xlsx output.xlsx \
     --source "Sheet!A1:F100" \
     --rows "Category" \
@@ -389,7 +389,7 @@ When PivotTable need is detected, you MUST:
     --chart "bar"
 
 # Step 3: Validate
-/app/.kimi/skills/xlsx/scripts/KimiXlsx validate output.xlsx
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx validate output.xlsx
 ```
 
 **⛔ FORBIDDEN**:
@@ -851,7 +851,7 @@ ws.add_chart(pie, "E2")
 
 **After Creating Charts - MANDATORY**:
 ```bash
-/app/.kimi/skills/xlsx/scripts/KimiXlsx chart-verify output.xlsx
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx chart-verify output.xlsx
 ```
 Exit code 1 = Charts broken → MUST FIX. No excuses - if chart-verify fails, the chart IS broken regardless of data embedding method.
 

@@ -61,16 +61,16 @@ This file (SKILL.md) contains constraints and principles. Route files contain **
 
 ```bash
 # Check environment (JSON output, exit code 0=ok, 2=missing deps)
-/app/.kimi/skills/pdf/scripts/pdf.sh check
+/app/.kimi/skills/kimi-pdf/scripts/pdf.sh check
 
 # Auto-fix missing dependencies (idempotent, safe to run multiple times)
-/app/.kimi/skills/pdf/scripts/pdf.sh fix
+/app/.kimi/skills/kimi-pdf/scripts/pdf.sh fix
 
 # Convert HTML to PDF
-/app/.kimi/skills/pdf/scripts/pdf.sh html input.html
+/app/.kimi/skills/kimi-pdf/scripts/pdf.sh html input.html
 
 # Compile LaTeX to PDF
-/app/.kimi/skills/pdf/scripts/pdf.sh latex input.tex
+/app/.kimi/skills/kimi-pdf/scripts/pdf.sh latex input.tex
 ```
 
 **Exit codes:**

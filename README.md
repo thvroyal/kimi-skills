@@ -34,13 +34,13 @@ npx skills add thvroyal/kimi-skills
 
 | Skill | Description |
 |-------|-------------|
-| **docx** | Generate and edit Word documents (.docx) with professional layouts, charts, track-changes, and more |
-| **pdf** | Create PDFs using HTML+Paged.js or LaTeX. Process existing PDFs (extract, merge, fill forms) |
-| **xlsx** | Advanced spreadsheet manipulation with formulas, formatting, charts, and PivotTables |
+| **kimi-docx** | Generate and edit Word documents (.docx) with professional layouts, charts, track-changes, and more |
+| **kimi-pdf** | Create PDFs using HTML+Paged.js or LaTeX. Process existing PDFs (extract, merge, fill forms) |
+| **kimi-xlsx** | Advanced spreadsheet manipulation with formulas, formatting, charts, and PivotTables |
 
 ## Skills
 
-### 📄 DOCX - Word Document Generation
+### 📄 kimi-docx - Word Document Generation
 
 Creates professional Word documents using C# OpenXML SDK for new documents and Python+lxml for editing existing ones.
 
@@ -53,7 +53,7 @@ Creates professional Word documents using C# OpenXML SDK for new documents and P
 - Math equations (OMML)
 - Morandi and ink-wash style backgrounds
 
-### 📑 PDF - Professional PDF Solution
+### 📑 kimi-pdf - Professional PDF Solution
 
 Two routes for PDF creation:
 - **HTML Route** (default): Uses Playwright + Paged.js for HTML→PDF conversion
@@ -68,7 +68,7 @@ Two routes for PDF creation:
 - 11 cover style options
 - Process existing PDFs (extract, merge, split, fill forms)
 
-### 📊 XLSX - Excel Spreadsheet Manipulation
+### 📊 kimi-xlsx - Excel Spreadsheet Manipulation
 
 Creates and manipulates Excel files using Python + openpyxl/pandas.
 
@@ -94,17 +94,17 @@ The `examples/` directory contains sample outputs:
 ```
 kimi-skills/
 ├── skills/
-│   ├── docx/             # Word document skill
+│   ├── kimi-docx/        # Word document skill
 │   │   ├── SKILL.md
 │   │   ├── scripts/
 │   │   ├── references/
 │   │   ├── assets/
 │   │   └── validator/
-│   ├── pdf/              # PDF skill
+│   ├── kimi-pdf/         # PDF skill
 │   │   ├── SKILL.md
 │   │   ├── routes/
 │   │   └── scripts/
-│   └── xlsx/             # Excel skill
+│   └── kimi-xlsx/        # Excel skill
 │       ├── SKILL.md
 │       ├── scripts/
 │       └── pivot-table.md
@@ -115,9 +115,9 @@ kimi-skills/
 
 Skills automatically detect and install dependencies:
 
-- **docx**: .NET SDK, Python 3, pandoc (optional)
-- **pdf**: Node.js, Playwright, Python 3 (for processing)
-- **xlsx**: Python 3, openpyxl, pandas
+- **kimi-docx**: .NET SDK, Python 3, pandoc (optional)
+- **kimi-pdf**: Node.js, Playwright, Python 3 (for processing)
+- **kimi-xlsx**: Python 3, openpyxl, pandas
 
 ## Credits
 

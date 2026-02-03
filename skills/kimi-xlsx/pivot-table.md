@@ -41,7 +41,7 @@ description: "Create PivotTables in Excel using the pivot command (pure OpenXML 
 ## Usage
 
 ```bash
-/app/.kimi/skills/xlsx/scripts/KimiXlsx pivot \
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx pivot \
     <input.xlsx> <output.xlsx> \
     --source "Sheet!A1:Z100" \
     --location "PivotSheet!A3" \
@@ -125,7 +125,7 @@ description: "Create PivotTables in Excel using the pivot command (pure OpenXML 
 **CRITICAL**: You MUST run `inspect` first to get the parameters for `pivot` command.
 
 ```bash
-/app/.kimi/skills/xlsx/scripts/KimiXlsx inspect data.xlsx --pretty
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx inspect data.xlsx --pretty
 ```
 
 **Example Output**:
@@ -157,14 +157,14 @@ description: "Create PivotTables in Excel using the pivot command (pure OpenXML 
 
 ```bash
 # Step 1: Verify formulas (assumes data.xlsx already exists)
-/app/.kimi/skills/xlsx/scripts/KimiXlsx recheck data.xlsx
-/app/.kimi/skills/xlsx/scripts/KimiXlsx reference-check data.xlsx
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx recheck data.xlsx
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx reference-check data.xlsx
 
 # Step 2: Inspect structure (get sheet names, headers)
-/app/.kimi/skills/xlsx/scripts/KimiXlsx inspect data.xlsx --pretty
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx inspect data.xlsx --pretty
 
 # Step 3: Create PivotTable (use --style for theme)
-/app/.kimi/skills/xlsx/scripts/KimiXlsx pivot \
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx pivot \
     data.xlsx output.xlsx \
     --source "SalesData!A1:F500" \
     --rows "Product,Region" \
@@ -174,7 +174,7 @@ description: "Create PivotTables in Excel using the pivot command (pure OpenXML 
     --style "finance"
 
 # Step 4: Validate output (auto-ignores safe openpyxl issues, but NOT pivot errors)
-/app/.kimi/skills/xlsx/scripts/KimiXlsx validate output.xlsx
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx validate output.xlsx
 # Exit code 0 = safe to deliver
 # Exit code 1 = critical errors (pivot structure problems) - MUST FIX
 ```
@@ -185,7 +185,7 @@ description: "Create PivotTables in Excel using the pivot command (pure OpenXML 
 
 **Sales Summary by Product**:
 ```bash
-/app/.kimi/skills/xlsx/scripts/KimiXlsx pivot \
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx pivot \
     sales.xlsx output.xlsx \
     --source "Sales!A1:F500" \
     --rows "Product" \
@@ -195,7 +195,7 @@ description: "Create PivotTables in Excel using the pivot command (pure OpenXML 
 
 **Quarterly Comparison with Filters**:
 ```bash
-/app/.kimi/skills/xlsx/scripts/KimiXlsx pivot \
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx pivot \
     quarterly.xlsx report.xlsx \
     --source "Data!A1:H200" \
     --rows "Category" \
@@ -207,7 +207,7 @@ description: "Create PivotTables in Excel using the pivot command (pure OpenXML 
 
 **Multi-Dimension Analysis (with Finance style)**:
 ```bash
-/app/.kimi/skills/xlsx/scripts/KimiXlsx pivot \
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx pivot \
     transactions.xlsx report.xlsx \
     --source "Transactions!A1:G2000" \
     --rows "Category,Subcategory" \
@@ -221,7 +221,7 @@ description: "Create PivotTables in Excel using the pivot command (pure OpenXML 
 
 **Trend Analysis with Line Chart**:
 ```bash
-/app/.kimi/skills/xlsx/scripts/KimiXlsx pivot \
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx pivot \
     monthly_data.xlsx trend_report.xlsx \
     --source "Data!A1:D100" \
     --rows "Month" \
@@ -232,7 +232,7 @@ description: "Create PivotTables in Excel using the pivot command (pure OpenXML 
 
 **Market Share with Pie Chart**:
 ```bash
-/app/.kimi/skills/xlsx/scripts/KimiXlsx pivot \
+/app/.kimi/skills/kimi-xlsx/scripts/KimiXlsx pivot \
     market_data.xlsx share_report.xlsx \
     --source "Sales!A1:C50" \
     --rows "Region" \
